@@ -1,13 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function NavBar() {
   return (
-    <div>
+    <div className=''>
         <nav className="navbar bg-body-tertiary">
-            <div className="container-fluid justify-content-center">
-                    <Link className='btn btn-outline-secondary d-inblock mx-2' to="/">Home</Link>
-                    <Link className='btn btn-outline-secondary d-inblock mx-2' to="/birds">Birds</Link>
+            <div className="container-fluid justify-content-end">
+                    <div className='me-3'>
+                      <NavLink 
+                              className={({isActive, isPending}) => isActive ? "btn btn-outline-primary" : "text-decoration-none"} to="/">
+                                Home
+                      </NavLink>
+                    </div>
+                    <div className='me-5'>
+                      <NavLink 
+                              className={({isActive, isPending}) => isActive ? "btn btn-outline-primary" : "text-decoration-none"} to="/birds">
+                        Birds
+                      </NavLink>
+                    </div>
             </div>
         </nav>
     </div>
